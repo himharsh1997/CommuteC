@@ -48,6 +48,7 @@ if(this.s1_data.date != "" && this.s1_data.shift != "" && this.step == 1){
   if(this.step < 3){
 this.step = this.step + 1;
 }
+this.da.poststep1(this.s1_data);
 document.getElementById("baricon1").innerHTML='<i class="fa fa-check b1c" id="b1c" aria-hidden="true" style="display:inline;"></i>';
 document.getElementById("b1c").style.display = "inline";
 document.getElementById("baricon1").style.backgroundColor = "#73a6d1"
