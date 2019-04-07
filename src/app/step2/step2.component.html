@@ -1,9 +1,9 @@
 <div id="step2_container">
 <label id="search_employee"><i class="fa fa-search" style="color:#e5e7e8;cursor:pointer;" aria-hidden="true" id="search_icon"></i><input id="search_field"  type="text" placeholder="Search by employee name"></label>
 <ul id="list">
-  <li class="noon"  *ngFor= "let da of mylist">
-  <input type="checkbox" id="checkme"> <p id="uname"> {{da.name}}</p>
+  <li class="noon" id= "" id= {{da.id}}  *ngFor= "let da of mylist" (click) = pushname(da.id)>
+  <input type="checkbox" id="{{'checkme' + da.id}}" value="unchecked"> <p id="uname"> {{da.name}}</p>
   </li>
 </ul>
 </div>
-<p class="countme">Selected<span style="color:#73a6d1;font-weight:bold;">{{" " + count}}</span></p>
+<p class="countme">Selected<input style="color:#73a6d1;font-weight:bold;width:1.5em;border-width:0px;background-color:white;text-align:right;" value={{count}} disabled></p>

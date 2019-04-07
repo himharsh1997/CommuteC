@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
 import { MyserviceService } from '../myservice.service';
 import * as $ from 'jquery';
 import { Observable } from 'rxjs';
@@ -13,20 +13,38 @@ import { map } from 'rxjs/operators';
 })
 export class Step2Component implements OnInit {
   title = "step2-title";
-count = 0;
-mylist:any;
+  count = 0;
+  mylist:any;
+  names :any= [];
+  @Output() nameg = new EventEmitter<any>()
   constructor(private api:MyserviceService) {
-}
+   }
 
-ngOnInit() {
+  ngOnInit() {
        this.api.getdata().subscribe((res)=>{
         console.log(res);
         this.mylist = res;
-});
-
+          });
 }
+pushname = (id)=>{
+  console.log(id);
 
-
+  if(document.getElementById("checkme" + id).value == "unchecked")
+  { document.getElementById("checkme" + id).checked = true;
+    document.getElementById("checkme" + id).value = "checked";
+  this.names.push(document.getElementById("" + id).childNodes[1].innerHTML);
+   this.count = this.count + 1;
+   this.nameg.emit(this.names);
+  }
+  else if(document.getElementById("checkme" + id).value == "checked"){
+    document.getElementById("checkme" + id).checked = false;
+    document.getElementById("checkme" + id).value = "unchecked";
+    this.names = this.names.filter((x)=>{ if (x != document.getElementById("" + id).childNodes[1].innerHTML){return x;} })
+    this.count = this.count - 1;
+    this.nameg.emit(this.names);
+  }
+console.log(this.names);
+}
 
 
 }

@@ -13,10 +13,10 @@ export class AppComponent {
 
  }
  s1_data ={'date':"",'shift':"",'t_type':"Pick-up",'a_type':"Nodal"};
- s2_data;
+ s2_data = [];
  s3_data;
-data_tostep2 = [{'name':'Himanshu'}];
-
+data_tostep2 = [];
+step2kadata = [];
  ngOnInit(): void {
 
 
@@ -34,6 +34,10 @@ data_tostep2 = [{'name':'Himanshu'}];
   addressEventHander($event: any) {
            this.s1_data.a_type = $event;
          }
+        nameEventHandler($event:any){
+          this.step2kadata = $event;
+          console.log("HII");
+        }
 
   step = 1;
 

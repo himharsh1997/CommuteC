@@ -48,7 +48,9 @@ li:first-child{
   height: fit-content;
   display: block;
   width:auto;
-margin-left: -2em;
+  cursor:pointer;
+
+  margin-left: -2em;
   margin-right: auto;
 }
 #checkme{display: inline-flex;width:10%;  background-color: #2196F3;}
