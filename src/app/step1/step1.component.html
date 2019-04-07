@@ -1,0 +1,30 @@
+<div id="step1_container">
+    <label name="Date">Date:<span class="required">*</span><input type="date" name="dateofbirth" id="date" class="date" (change)="display_date($event)" ></label>
+
+
+    <div class="dropdown">
+        <label name="Shift">Shift:<span class="required">*</span></label>
+        <button class="dropbtn" id="dropbtn">Select Shift<i class="fa fa-caret-down down_arrow"></i></button>
+        <div class="dropdown-content">
+            <a (click)="dis_shift($event)" style="cursor:pointer">Morning</a>
+            <a (click)="dis_shift($event)" style="cursor:pointer">Afternoon</a>
+            <a (click)="dis_shift($event)" style="cursor:pointer">Evening</a>
+            <a (click)="dis_shift($event)" style="cursor:pointer">Night</a>
+        </div>
+    </div>
+    <div class="drop_time">
+        <p class="drop_title">Trip Type:</p>
+        <div class="trip_option">
+            <button id="pup" class="to_active opt" (click)="trip_type($event)">Pick-up</button>
+            <button id="dof" class="to_active_not opt" (click)="trip_type($event)">Drop-off</button>
+        </div>
+    </div>
+    <div class="address_type">
+        <p class="address_title">Address Type:</p>
+        <div class="address_option">
+            <button id="no" class="to_active opt" (click)="ad_type($event)">Nodal</button>
+            <button id="ho" class="to_active_not opt" (click)="ad_type($event)">Home</button>
+        </div>
+    </div>
+
+</div>
