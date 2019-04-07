@@ -3,13 +3,13 @@
     <div style="display:flex; width:80%;flex-flow:row; margin-left:auto;margin-right:auto;margin-top:2em">
         <span style="display:inline" id='baricon1' class='baricon1'>1</span>
         <span style="display:inline" id="bar1" class='progress_bar'></span>
-        <span style="display:inline" class='baricon2'>2</span>
+        <span style="display:inline" id="baricon2" class='baricon2'>2</span>
         <span style="display:inline" id="bar2" class='progress_bar'></span>
-        <span style="display:inline" class='baricon3'>3</span>
+        <span style="display:inline" id="baricon3" class='baricon3'>3</span>
     </div>
 
     <app-step1 *ngIf="step == 1" (date)="dateEventHander($event)" (shift)="shiftEventHander($event)" (trip)="t_typeEventHander($event)" (address)="addressEventHander($event)"></app-step1>
-    <app-step2 *ngIf="step == 2"></app-step2>
+    <app-step2 *ngIf="step == 2" (nameg) ="nameEventHandler($event)"></app-step2>
     <app-step3 *ngIf="step == 3"></app-step3>
 
     <div class="sliding">

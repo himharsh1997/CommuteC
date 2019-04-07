@@ -16,7 +16,7 @@ export class AppComponent {
  s2_data = [];
  s3_data;
 data_tostep2 = [];
-step2kadata = [];
+step2kadata = null;
  ngOnInit(): void {
 
 
@@ -36,7 +36,7 @@ step2kadata = [];
          }
         nameEventHandler($event:any){
           this.step2kadata = $event;
-          console.log("HII");
+
         }
 
   step = 1;
@@ -44,9 +44,10 @@ step2kadata = [];
   //jQuery time
 forward = ()=>{
 
-
-if(this.s1_data.date != "" && this.s1_data.shift != ""){
+if(this.s1_data.date != "" && this.s1_data.shift != "" && this.step == 1){
+  if(this.step < 3){
 this.step = this.step + 1;
+}
 document.getElementById("baricon1").innerHTML='<i class="fa fa-check b1c" id="b1c" aria-hidden="true" style="display:inline;"></i>';
 document.getElementById("b1c").style.display = "inline";
 document.getElementById("baricon1").style.backgroundColor = "#73a6d1"
@@ -56,10 +57,37 @@ document.getElementById("bar1").style.backgroundColor = "#73a6d1"
 }
 else {}
 
+if(this.step == 2 && this.step2kadata != null){
+  if(this.step < 3){
+this.step = this.step + 1;
+alert("3");
+}
+document.getElementById("baricon2").innerHTML='<i class="fa fa-check b1c" id="b2c" aria-hidden="true" style="display:inline;"></i>';
+document.getElementById("b2c").style.display = "inline";
+document.getElementById("baricon2").style.backgroundColor = "#73a6d1"
+document.getElementById("baricon2").style.color = "white"
+document.getElementById("bar2").style.backgroundColor = "#73a6d1"}
 }
 
 
 backward = ()=>{
+
+if(this.step > 1){
+
+  if(this.step == 2){
+    document.getElementById("baricon1").innerHTML='1';
+    document.getElementById("b1c").style.display = "none";
+    document.getElementById("baricon1").style.backgroundColor = "white";;
+    document.getElementById("baricon1").style.color = "white";
+    document.getElementById("bar1").style.backgroundColor = "#dae3ea";
+  }
+  else  if(this.step == 3){
+
+   }
+
+ this.step = this.step -1;
+
+ }
 
 }
 
