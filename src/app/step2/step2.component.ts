@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import {interval} from 'rxjs';
 import {startWith} from 'rxjs/operators';
 import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-step2',
   templateUrl: './step2.component.html',
@@ -16,6 +17,7 @@ export class Step2Component implements OnInit {
   count = 0;
   mylist:any;
   names :any= [];
+  searchText:any ;
   @Output() nameg = new EventEmitter<any>()
   constructor(private api:MyserviceService) {
    }

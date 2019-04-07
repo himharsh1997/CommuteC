@@ -8,9 +8,9 @@
         <span style="display:inline" id="baricon3" class='baricon3'>3</span>
     </div>
 
-    <app-step1 *ngIf="step != 1" (date)="dateEventHander($event)" (shift)="shiftEventHander($event)" (trip)="t_typeEventHander($event)" (address)="addressEventHander($event)"></app-step1>
-    <app-step2 *ngIf="step != 1" (nameg) ="nameEventHandler($event)"></app-step2>
-    <app-step3 *ngIf="step == 1"></app-step3>
+    <app-step1 *ngIf="step == 1" (date)="dateEventHander($event)" (shift)="shiftEventHander($event)" (trip)="t_typeEventHander($event)" (address)="addressEventHander($event)"></app-step1>
+    <app-step2 *ngIf="step == 2" (nameg) ="nameEventHandler($event)"></app-step2>
+    <app-step3 *ngIf="step == 3"></app-step3>
 
     <div class="sliding">
         <button *ngIf="step != 1" type="button" class="prev" (click)="backward()"><i class="fa fa-angle-left  pr"></i>Previous</button>

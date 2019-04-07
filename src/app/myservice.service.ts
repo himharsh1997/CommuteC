@@ -7,7 +7,7 @@ import {Step1data} from './step1data';
 })
 export class MyserviceService {
 private _postsURL = "http://private-8d2fe-assignment36.apiary-mock.com/employees";
-private vendor = "https://polls.apiblueprint.org/vendors";
+private vendor = "https://private-8d2fe-assignment36.apiary-mock.com/vendors";
   value1;
   value2 = "";
 
@@ -22,4 +22,7 @@ private vendor = "https://polls.apiblueprint.org/vendors";
   steps2_data;
   steps3_data;
 
+poststep1( me) {
+  return this.http.post(me,)
+}
 }
