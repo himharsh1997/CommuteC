@@ -35,7 +35,7 @@ pushname = (id)=>{
   {
     (document.getElementById("checkme" + id) as HTMLInputElement).checked = true;
     (document.getElementById("checkme" + id) as HTMLInputElement).value = "checked";
-    this.names.push((document.getElementById("" + id).childNodes[1] as HTMLInputElement).innerHTML);
+    this.names.push(id);
     this.count = this.count + 1;
     this.nameg.emit(this.names);
 
@@ -44,7 +44,7 @@ pushname = (id)=>{
 
     (document.getElementById("checkme" + id) as HTMLInputElement).checked = false;
     (document.getElementById("checkme" + id) as HTMLInputElement).value = "unchecked";
-    this.names = this.names.filter((x)=>{ if (x != (document.getElementById("" + id).childNodes[1] as HTMLInputElement).innerHTML){return x;} })
+    this.names = this.names.filter((x)=>{ if (x != id){return x;} })
     this.count = this.count - 1;
     this.nameg.emit(this.names);
 

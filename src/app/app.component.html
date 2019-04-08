@@ -10,11 +10,11 @@
 
     <app-step1 *ngIf="step == 1" (date)="dateEventHander($event)" (shift)="shiftEventHander($event)" (trip)="t_typeEventHander($event)" (address)="addressEventHander($event)"></app-step1>
     <app-step2 *ngIf="step == 2" (nameg) ="nameEventHandler($event)"></app-step2>
-    <app-step3 *ngIf="step == 3"></app-step3>
+    <app-step3 *ngIf="step == 3" (vendorg) ="vendorEventHandler($event)"></app-step3>
 
     <div class="sliding">
-        <button *ngIf="step != 1" type="button" class="prev" (click)="backward()"><i class="fa fa-angle-left  pr"></i>Previous</button>
-        <button type="button" class="next" (click)="forward()">{{type}}<i *ngIf = "step != 3" class="fa fa-angle-right  nxt"></i></button>
+        <button *ngIf="step != 1 && step != 4" type="button" class="prev" (click)="backward()"><i class="fa fa-angle-left  pr"></i>Previous</button>
+        <button *ngIf= "step != 4" type="button" class="next" (click)="forward()">{{type}}<i *ngIf = "step != 3" class="fa fa-angle-right  nxt"></i></button>
     </div>
 
 

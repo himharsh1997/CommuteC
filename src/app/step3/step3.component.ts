@@ -7,7 +7,7 @@ import { MyserviceService } from '../myservice.service';
   providers:[MyserviceService]
 })
 export class Step3Component implements OnInit {
-
+  @Output() vendorg = new EventEmitter<any>()
   constructor(private api:MyserviceService) {
    }
  mylist;
@@ -22,5 +22,6 @@ export class Step3Component implements OnInit {
 storevendor = (x)=>{
   console.log(x);
   this.nameofvendor  = (document.getElementById("" + x).childNodes[1] as HTMLElement).innerHTML ;
+  this.vendorg.emit(this.nameofvendor);
 }
 }

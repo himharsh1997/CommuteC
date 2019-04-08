@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Pipe, PipeTransform } from '@angular/core';
 import {Step1data} from './step1data';
 @Injectable({
   providedIn: 'root',
@@ -22,7 +22,24 @@ private vendor = "https://private-8d2fe-assignment36.apiary-mock.com/vendors";
   steps2_data;
   steps3_data;
 
-poststep1( me) {
-  return this.http.post('https://private-8d2fe-assignment36.apiary-mock.com/routes',me);
+postdata( step1,step2) {
+   this.http.post('https://private-8d2fe-assignment36.apiary-mock.com/routes',step1) ;
+   this.http.post('https://private-8d2fe-assignment36.apiary-mock.com/trip',step2)
+   console.log("data send");
+
 }
+}
+
+@Pipe({
+  name: 'filter'
+})
+export class FilterPipe implements PipeTransform {
+  transform(items: any[], searchText: string): any[] {
+    if(!items) return [];
+    if(!searchText) return items;
+searchText = searchText.toLowerCase();
+return items.filter( it => {
+      return it.toLowerCase().includes(searchText);
+    });
+   }
 }

@@ -16,9 +16,11 @@ export class AppComponent {
  s1_data ={'date':"",'shift':"",'t_type':"Pick-up",'a_type':"Nodal"};
  s2_data = [];
  s3_data;
+
 data_tostep2 = [];
 step2kadata = null;
 vendorkadata = null;
+ alldata1 = {"step1":this.s1_data,"step2":this.step2kadata}
  ngOnInit(): void {
 
 
@@ -54,7 +56,7 @@ if(this.s1_data.date != "" && this.s1_data.shift != "" && this.step == 1){
   if(this.step < 3){
 this.step = this.step + 1;
 }
-this.da.poststep1(this.s1_data);
+
 document.getElementById("b1c").style.display = "inline";
 document.getElementById("b1p").style.display = "none";
 document.getElementById("baricon1").style.backgroundColor = "#73a6d1"
@@ -76,6 +78,12 @@ document.getElementById("baricon2").style.backgroundColor = "#73a6d1"
 document.getElementById("baricon2").style.color = "white"
 document.getElementById("bar2").style.backgroundColor = "#73a6d1"
 }
+
+if(this.step == 3 && this.vendorkadata != null){
+this.da.postdata(this.s1_data,this.vendorkadata);
+this.step = this.step + 1;
+}
+
 }
 
 
