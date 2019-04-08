@@ -16,6 +16,6 @@
         <button *ngIf="step != 1 && step != 4" type="button" class="prev" (click)="backward()"><i class="fa fa-angle-left  pr"></i>Previous</button>
         <button *ngIf= "step != 4" type="button" class="next" (click)="forward()">{{type}}<i *ngIf = "step != 3" class="fa fa-angle-right  nxt"></i></button>
     </div>
-
+   <p *ngIf="step == 4" style="font-size:1.5em;width:fit-content;margin-left:auto;margin-right:auto;font-family: 'Muli', sans-serif;color: #4993b7">Success! </p>
 
 </div>

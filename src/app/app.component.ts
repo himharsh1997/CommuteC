@@ -82,6 +82,11 @@ document.getElementById("bar2").style.backgroundColor = "#73a6d1"
 if(this.step == 3 && this.vendorkadata != null){
 this.da.postdata(this.s1_data,this.vendorkadata);
 this.step = this.step + 1;
+document.getElementById("b3c").style.display = "inline";
+document.getElementById("b3p").style.display = "none";
+document.getElementById("baricon3").style.backgroundColor = "#73a6d1"
+document.getElementById("baricon3").style.color = "white"
+
 }
 
 }

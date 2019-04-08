@@ -53,9 +53,7 @@ pushname = (id)=>{
 console.log(this.names);
 }
 
-textE(ev){
-  console.log("Event is ", ev);
-}
+
 
 
 }
