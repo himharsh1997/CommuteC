@@ -18,6 +18,7 @@ export class AppComponent {
  s3_data;
 data_tostep2 = [];
 step2kadata = null;
+vendorkadata = null;
  ngOnInit(): void {
 
 
@@ -37,6 +38,10 @@ step2kadata = null;
          }
         nameEventHandler($event:any){
           this.step2kadata = $event;
+
+        }
+        vendorEventHandler($event:any){
+          this.vendorkadata = $event;
 
         }
 
@@ -63,7 +68,7 @@ if(this.step == 2 && this.step2kadata != null){
   if(this.step < 3){
 this.step = this.step + 1;
 this.type = "Submit";
-alert("3");
+
 }
 document.getElementById("b2c").style.display = "inline";
 document.getElementById("b2p").style.display = "none";

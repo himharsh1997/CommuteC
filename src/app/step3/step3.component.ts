@@ -18,8 +18,9 @@ export class Step3Component implements OnInit {
      this.mylist = res;
        });
   }
-  nameofvendor;
+  nameofvendor = null;
 storevendor = (x)=>{
-  nameofvendor  = (document.getElementById("" + x).childNodes[1] as HTMLElement).innerHTML ;
+  console.log(x);
+  this.nameofvendor  = (document.getElementById("" + x).childNodes[1] as HTMLElement).innerHTML ;
 }
 }
