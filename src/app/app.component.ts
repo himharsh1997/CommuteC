@@ -12,6 +12,7 @@ export class AppComponent {
  constructor(private da:MyserviceService){
 
  }
+ type = "Next";
  s1_data ={'date':"",'shift':"",'t_type':"Pick-up",'a_type':"Nodal"};
  s2_data = [];
  s3_data;
@@ -61,6 +62,7 @@ else {}
 if(this.step == 2 && this.step2kadata != null){
   if(this.step < 3){
 this.step = this.step + 1;
+this.type = "Submit";
 alert("3");
 }
 document.getElementById("b2c").style.display = "inline";

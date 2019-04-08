@@ -1,8 +1,9 @@
 <div id="step3_container">
   <label id="select_v">Select Vendor<i class="fa fa-angle-down icon_v"></i></label>
   <ul id="vendor_ul" >
-    <li class="noon" id= "" id= {{da.id}}  *ngFor= "let da of mylist">
+    <li class="noon" #ve id= "" id= {{da.id}}  *ngFor= "let da of mylist" (click)="storevendor(this.ve.id)">
       <i class="fa fa-user" aria-hidden="true" style="color:#b6c8d6;"></i><p style="display:inline;margin-left:1.2em;font-size:0.9em;">{{da.name}}</p>
     </li>
   </ul>
+  
 </div>

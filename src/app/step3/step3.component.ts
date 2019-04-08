@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 import { MyserviceService } from '../myservice.service';
 @Component({
   selector: 'app-step3',
@@ -18,5 +18,8 @@ export class Step3Component implements OnInit {
      this.mylist = res;
        });
   }
-
+  nameofvendor;
+storevendor = (x)=>{
+  nameofvendor  = (document.getElementById("" + x).childNodes[1] as HTMLElement).innerHTML ;
+}
 }

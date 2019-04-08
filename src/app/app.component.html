@@ -14,7 +14,7 @@
 
     <div class="sliding">
         <button *ngIf="step != 1" type="button" class="prev" (click)="backward()"><i class="fa fa-angle-left  pr"></i>Previous</button>
-        <button type="button" class="next" (click)="forward()">Next<i class="fa fa-angle-right  nxt"></i></button>
+        <button type="button" class="next" (click)="forward()">{{type}}<i *ngIf = "step != 3" class="fa fa-angle-right  nxt"></i></button>
     </div>
 
 
