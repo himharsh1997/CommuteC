@@ -11,7 +11,15 @@
     display: block;
     margin-top: 2em;
 }
-
+#b1p,#b2p,#b3p{
+  display:inline-flex;
+  position:relative;
+  margin-top:auto;
+  margin-bottom:auto;
+  width:fit-content;
+  height:fit-content;
+  background-color: red;
+}
 $progress_c:#73a6d1;
 .progress_bar {
     width: 50%;

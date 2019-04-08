@@ -49,8 +49,8 @@ if(this.s1_data.date != "" && this.s1_data.shift != "" && this.step == 1){
 this.step = this.step + 1;
 }
 this.da.poststep1(this.s1_data);
-document.getElementById("baricon1").innerHTML='<i class="fa fa-check b1c" id="b1c" aria-hidden="true" style="display:inline;"></i>';
 document.getElementById("b1c").style.display = "inline";
+document.getElementById("b1p").style.display = "none";
 document.getElementById("baricon1").style.backgroundColor = "#73a6d1"
 document.getElementById("baricon1").style.color = "white"
 document.getElementById("bar1").style.backgroundColor = "#73a6d1"
@@ -63,11 +63,12 @@ if(this.step == 2 && this.step2kadata != null){
 this.step = this.step + 1;
 alert("3");
 }
-document.getElementById("baricon2").innerHTML='<i class="fa fa-check b1c" id="b2c" aria-hidden="true" style="display:inline;"></i>';
 document.getElementById("b2c").style.display = "inline";
+document.getElementById("b2p").style.display = "none";
 document.getElementById("baricon2").style.backgroundColor = "#73a6d1"
 document.getElementById("baricon2").style.color = "white"
-document.getElementById("bar2").style.backgroundColor = "#73a6d1"}
+document.getElementById("bar2").style.backgroundColor = "#73a6d1"
+}
 }
 
 
@@ -76,23 +77,24 @@ backward = ()=>{
 if(this.step > 1){
 
   if(this.step == 2){
-    document.getElementById("baricon1").innerHTML='1';
-
     document.getElementById("b1c").style.display = "none";
-    document.getElementById("baricon1").style.backgroundColor = "white";
-    document.getElementById("baricon1").style.borderColor = "#dae3ea";
-    document.getElementById("bar1").style.backgroundColor = "#dae3ea";
+    document.getElementById("b1p").style.display = "inline-flex";
+    document.getElementById("baricon1").style.backgroundColor = "white"
+    document.getElementById("baricon1").style.color = "#73a6d1"
+    document.getElementById("bar1").style.backgroundColor = "#dae3ea"
   }
-  else  if(this.step == 3){
-  //  document.getElementById("baricon2").innerHTML='2';
+   if(this.step == 3){
+
 
     document.getElementById("b2c").style.display = "none";
+    document.getElementById("b2p").style.display = "inline-flex";
     document.getElementById("baricon2").style.backgroundColor = "white";
-    document.getElementById("baricon2").style.borderColor = "#dae3ea";
+    document.getElementById("baricon2").style.borderColor = "#73a6d1";
+    document.getElementById("baricon2").style.color = "#73a6d1";
     document.getElementById("bar2").style.backgroundColor = "#dae3ea";
    }
 
- this.step = this.step -1;
+ this.step = this.step - 1;
 
  }
 

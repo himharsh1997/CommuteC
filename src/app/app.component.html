@@ -1,11 +1,11 @@
 <div id="container">
 
     <div style="display:flex; width:80%;flex-flow:row; margin-left:auto;margin-right:auto;margin-top:2em">
-        <span style="display:inline" id='baricon1' class='baricon1'>1</span>
+        <span style="display:inline" id='baricon1' class='baricon1'><p id="b1p" >1</p> <i class="fa fa-check b1c" id="b1c" aria-hidden="true" style="display:none;"></i></span>
         <span style="display:inline" id="bar1" class='progress_bar'></span>
-        <span style="display:inline" id="baricon2" class='baricon2'>2</span>
+        <span style="display:inline" id="baricon2" class='baricon2'><p id="b2p">2</p> <i class="fa fa-check b1c" id="b2c" aria-hidden="true" style="display:none;"></i></span>
         <span style="display:inline" id="bar2" class='progress_bar'></span>
-        <span style="display:inline" id="baricon3" class='baricon3'>3</span>
+        <span style="display:inline" id="baricon3" class='baricon3'><p id="b3p">3</p> <i class="fa fa-check b1c" id="b3c" aria-hidden="true" style="display:none;"></i></span>
     </div>
 
     <app-step1 *ngIf="step == 1" (date)="dateEventHander($event)" (shift)="shiftEventHander($event)" (trip)="t_typeEventHander($event)" (address)="addressEventHander($event)"></app-step1>
