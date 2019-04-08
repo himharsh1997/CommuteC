@@ -29,22 +29,26 @@ export class Step2Component implements OnInit {
           });
 }
 pushname = (id)=>{
-  console.log(id);
+  console.log((document.getElementById("checkme" + id) as HTMLInputElement).value == "unchecked");
 
-  if(document.getElementById("checkme" + id).value == "unchecked")
-  { document.getElementById("checkme" + id).checked = true;
-    document.getElementById("checkme" + id).value = "checked";
-  this.names.push(document.getElementById("" + id).childNodes[1].innerHTML);
-   this.count = this.count + 1;
-   this.nameg.emit(this.names);
+  if((document.getElementById("checkme" + id) as HTMLInputElement).value == "unchecked")
+  {
+    (document.getElementById("checkme" + id) as HTMLInputElement).checked = true;
+    (document.getElementById("checkme" + id) as HTMLInputElement).value = "checked";
+    this.names.push((document.getElementById("" + id).childNodes[1] as HTMLInputElement).innerHTML);
+    this.count = this.count + 1;
+    this.nameg.emit(this.names);
+
   }
-  else if(document.getElementById("checkme" + id).value == "checked"){
-    document.getElementById("checkme" + id).checked = false;
-    document.getElementById("checkme" + id).value = "unchecked";
-    this.names = this.names.filter((x)=>{ if (x != document.getElementById("" + id).childNodes[1].innerHTML){return x;} })
+  else if((document.getElementById("checkme" + id) as HTMLInputElement).value == "checked"){
+    (document.getElementById("checkme" + id) as HTMLInputElement).checked = false;
+    (document.getElementById("checkme" + id) as HTMLInputElement).value = "unchecked";
+    this.names = this.names.filter((x)=>{ if (x != (document.getElementById("" + id).childNodes[1] as HTMLInputElement).innerHTML){return x;} })
     this.count = this.count - 1;
     this.nameg.emit(this.names);
+
   }
+
 console.log(this.names);
 }
 
