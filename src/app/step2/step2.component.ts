@@ -41,6 +41,7 @@ pushname = (id)=>{
 
   }
   else if((document.getElementById("checkme" + id) as HTMLInputElement).value == "checked"){
+
     (document.getElementById("checkme" + id) as HTMLInputElement).checked = false;
     (document.getElementById("checkme" + id) as HTMLInputElement).value = "unchecked";
     this.names = this.names.filter((x)=>{ if (x != (document.getElementById("" + id).childNodes[1] as HTMLInputElement).innerHTML){return x;} })

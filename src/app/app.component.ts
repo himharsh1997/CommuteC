@@ -77,13 +77,19 @@ if(this.step > 1){
 
   if(this.step == 2){
     document.getElementById("baricon1").innerHTML='1';
+
     document.getElementById("b1c").style.display = "none";
-    document.getElementById("baricon1").style.backgroundColor = "white";;
-    document.getElementById("baricon1").style.color = "white";
+    document.getElementById("baricon1").style.backgroundColor = "white";
+    document.getElementById("baricon1").style.borderColor = "#dae3ea";
     document.getElementById("bar1").style.backgroundColor = "#dae3ea";
   }
   else  if(this.step == 3){
+  //  document.getElementById("baricon2").innerHTML='2';
 
+    document.getElementById("b2c").style.display = "none";
+    document.getElementById("baricon2").style.backgroundColor = "white";
+    document.getElementById("baricon2").style.borderColor = "#dae3ea";
+    document.getElementById("bar2").style.backgroundColor = "#dae3ea";
    }
 
  this.step = this.step -1;
